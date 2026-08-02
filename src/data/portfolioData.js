@@ -1,6 +1,7 @@
 export const LANGUAGES = Object.freeze({
   ptBR: "pt-BR",
   enUS: "en-US",
+  esES: "es-ES",
 });
 
 export const DEFAULT_LANGUAGE = LANGUAGES.ptBR;
@@ -847,6 +848,204 @@ const portfolioByLanguage = {
     },
   },
 };
+
+const spanishData = structuredClone(portfolioByLanguage[LANGUAGES.enUS]);
+
+spanishData.layout = {
+  navItems: [
+    { to: "/", label: "Inicio" },
+    { to: "/sobre", label: "Sobre mí" },
+    { to: "/projetos", label: "Proyectos" },
+    { to: "/contato", label: "Contacto" },
+  ],
+  languageSwitchLabel: "Cambiar idioma",
+  footerTitle: "¿Hablamos de tu proyecto?",
+  footerText: "Proyectos a medida de desarrollo web, IA y automatización.",
+  footerCta: "Contactarme",
+};
+
+spanishData.home = {
+  ...spanishData.home,
+  kicker: "Portafolio Profesional",
+  title: "CTO, fundador y creador de productos con IA",
+  subtitle: "Transformo procesos manuales en sistemas inteligentes orientados a resultados de negocio.",
+  projectsCta: "Ver Proyectos",
+  contactCta: "Contactarme",
+  photoAlt: "Foto profesional de Rodrigo Ramos",
+  photoHintStart: "Usa tu foto profesional en",
+  photoHintEnd: "para mostrarla aquí.",
+  avatarAria: "Avatar profesional",
+  highlightLabel: "Destacado",
+  highlightTitle: "🏆 Ganador del Agro Inova Summit 2025",
+  highlightText: "🚜 CTO y socio fundador de Conecta Rural",
+  aboutLabel: "Sobre mí",
+  aboutTitle: "Quién soy",
+  aboutText: "Soy CTO y socio fundador de Conecta Rural, startup ganadora del Agro Inova Summit 2025. Desarrollo plataformas web, soluciones de inteligencia artificial y sistemas de automatización enfocados en resolver problemas reales de empresas y productores rurales.",
+  buildLabel: "Metodología",
+  buildTitle: "Cómo construyo productos",
+  buildItems: [
+    "🚀 Desarrollo acelerado por IA",
+    "🤖 Agentes y automatizaciones",
+    "⚙️ Integración entre sistemas",
+    "📊 Desarrollo orientado a datos",
+    "🌱 Soluciones para el agronegocio",
+  ],
+  technologiesLabel: "Tecnologías",
+  technologiesTitle: "Stack principal",
+  technologiesLine: "React • Next.js • Node.js • n8n • Firebase • Supabase • Google Apps Script • Docker • WhatsApp API • IA",
+  metricsAria: "Métricas de impacto",
+  projectsLabel: "Proyectos",
+  projectsTitle: "Proyectos Destacados",
+  specialtiesLabel: "Especialidades",
+  specialtiesTitle: "Problemas que resuelvo",
+};
+
+spanishData.aboutPage = {
+  label: "Sobre mí",
+  title: "Rodrigo Ramos",
+  paragraphs: [
+    "Desarrollador de soluciones web, IA y automatización enfocado en transformar operaciones manuales en sistemas digitales inteligentes.",
+    "Trabajo orientado a producto durante todo el ciclo: desde el descubrimiento y el modelado de negocio hasta la arquitectura, implementación, integraciones y evolución escalable de la plataforma.",
+  ],
+  methodologyLabel: "Metodología",
+  methodologyTitle: "Cómo trabajo",
+  methodologyText: "Utilizo inteligencia artificial, automatización y desarrollo asistido por IA para acelerar la creación de productos, prototipos y soluciones empresariales, manteniendo el foco en la arquitectura, la calidad y los resultados de negocio.",
+  toolsLabel: "Herramientas",
+  toolsTitle: "Herramientas que utilizo",
+  tools: spanishData.aboutPage.tools,
+  cards: [
+    { title: "Producto + Tecnología", description: "de la estrategia al despliegue" },
+    { title: "IA + Automatización", description: "enfoque en la eficiencia operativa" },
+    { title: "Sectores", description: "agronegocio, servicios y pymes" },
+  ],
+};
+
+spanishData.projectsPage = {
+  label: "Proyectos",
+  title: "Portafolio de productos y casos",
+  description: "Selecciona un proyecto para abrir el caso completo en su página dedicada.",
+};
+
+spanishData.casePage = {
+  label: "Caso de Proyecto",
+  projectLinkLabel: "Enlace del proyecto:",
+  featuresDefaultTitle: "Funcionalidades principales",
+  responsibilitiesTitle: "Responsabilidades principales",
+  technologiesTitle: "Tecnologías utilizadas",
+  approachTitle: "Enfoque",
+  galleryLabel: "Galería",
+  galleryTitle: "Pantallas del proyecto",
+  backToProjects: "Volver a proyectos",
+  openSystem: "Abrir Sistema",
+  talkAboutProject: "Hablar sobre este proyecto",
+  galleryAltSuffix: "del proyecto",
+  previousImage: "Imagen anterior",
+  nextImage: "Imagen siguiente",
+  clientCasesLabel: "Casos reales",
+  clientCasesTitle: "Soluciones empresariales implementadas",
+  problemLabel: "Problema:",
+  solutionLabel: "Solución:",
+  resultLabel: "Resultado:",
+  screenshotLabel: "Captura de pantalla del sistema",
+  expandImage: "Ampliar imagen",
+  closeImage: "Cerrar imagen",
+};
+
+spanishData.contactPage = {
+  label: "Contacto",
+  title: "Hablemos de tu proyecto",
+  description: "Si necesitas desarrollo web, automatización de procesos o aplicaciones con IA, ponte en contacto para que estructuremos la solución adecuada.",
+};
+
+spanishData.metrics = [
+  { value: "🏆 1", label: "Startup Premiada" },
+  { value: "🚀 3", label: "Productos Propios" },
+  { value: "🤖", label: "Automatizaciones a medida desarrolladas" },
+  { value: "⚡ AI-Native", label: "Desarrollo" },
+  { value: "🌱 AgriTech", label: "e IA" },
+];
+
+spanishData.problems = [
+  "Automatización de WhatsApp",
+  "Sistemas para el agronegocio",
+  "Integración entre plataformas",
+  "IA para atención al cliente",
+  "Paneles operativos",
+  "Sistemas de pedidos",
+];
+
+const spanishCards = [
+  ["Startup Agro", "Digitalización de las operaciones del agronegocio con automatización, integraciones y datos en tiempo real.", "Ver Caso"],
+  ["NFC + Identificación Digital", "Identificación digital de mascotas mediante NFC para aumentar las posibilidades de reencuentro con información siempre actualizada.", "Ver Caso"],
+  ["Google Workspace + IA + WhatsApp", "Automatizaciones personalizadas para empresas locales con Google Apps Script, Google Sheets, aplicaciones web, IA e integraciones con WhatsApp.", "Ver Casos"],
+  ["Gestión Rural", "Plataforma web para centralizar la gestión administrativa, financiera y operativa de propiedades rurales, con acceso desde ordenador y móvil.", "Ver Caso"],
+];
+spanishData.projectCards = spanishData.projectCards.map((card, index) => ({
+  ...card,
+  tag: spanishCards[index][0],
+  problem: spanishCards[index][1],
+  cta: spanishCards[index][2],
+}));
+
+const spanishCaseCopy = {
+  conectaRural: {
+    roleTitle: "CTO y socio fundador — Conecta Rural",
+    summary: [
+      "Conecta Rural es una startup enfocada en digitalizar y optimizar las operaciones del agronegocio, conectando productores rurales, distribuidores y equipos de campo mediante tecnología, automatización e inteligencia artificial.",
+      "Como CTO y socio fundador, lideré la concepción de la plataforma, la arquitectura tecnológica, el desarrollo de la aplicación y las soluciones de automatización que sostienen el ecosistema de la empresa.",
+      "Trabajo desde la planificación del producto hasta la implementación de sistemas, integraciones, experiencia de usuario y estrategias de escalabilidad. La plataforma reduce procesos manuales, aumenta la eficiencia y apoya decisiones con datos en tiempo real.",
+    ],
+    responsibilities: ["Concepción y desarrollo de la aplicación Conecta Rural.", "Arquitectura e implementación de la plataforma.", "Desarrollo de sistemas web y móviles.", "Integración de automatizaciones e inteligencia artificial.", "Gestión de infraestructura tecnológica y evolución del producto.", "Definición de la estrategia tecnológica de la empresa."],
+    highlight: { title: "Destacado", text: "Conecta Rural ganó el Agro Inova Summit 2025, reconocimiento que validó el potencial de la solución para transformar procesos y generar eficiencia en el agronegocio." },
+    approach: "Desarrollo asistido por IA para acelerar entregas, validar hipótesis de producto y evolucionar la plataforma con calidad arquitectónica.",
+  },
+  pettapbr: {
+    roleTitle: "Fundador y desarrollador — PetTapBR",
+    summary: [
+      "PetTapBR es una plataforma que combina tecnología NFC e identificación digital para ayudar a los tutores a proteger a sus mascotas.",
+      "Una etiqueta NFC en el collar permite acceder al instante a un perfil digital con contactos de emergencia, datos del animal y formas rápidas de comunicarse con el tutor.",
+      "Como fundador y desarrollador, fui responsable de la idea, la plataforma, la experiencia de usuario, la estructura tecnológica y el modelo de negocio.",
+    ],
+    responsibilities: ["Creación del concepto y modelo de negocio.", "Desarrollo de la plataforma web.", "Diseño del sistema de perfiles digitales para mascotas.", "Integración con tecnología NFC.", "Desarrollo de identidad visual y experiencia de usuario.", "Planificación de escalabilidad y monetización."],
+    highlight: { title: "Problema resuelto", text: "Las placas tradicionales tienen espacio limitado y pueden quedar desactualizadas. PetTapBR convierte la identificación en un perfil digital dinámico, accesible al instante mediante un smartphone con NFC." },
+    approach: "Desarrollo asistido por IA para acelerar el prototipado, las pruebas de usabilidad y la validación rápida del producto.",
+  },
+  painelIa: {
+    roleTitle: "Casos reales - Soluciones empresariales",
+    summary: ["Automatizaciones implementadas para empresas locales mediante IA, WhatsApp, Google Workspace y sistemas web personalizados.", "Esta sección presenta casos reales enfocados en ganancias operativas, reducción del retrabajo y decisiones orientadas a datos."],
+    responsibilities: ["Mapeo de procesos y cuellos de botella operativos.", "Desarrollo de aplicaciones web y automatizaciones a medida.", "Integración entre Google Workspace, WhatsApp y APIs.", "Evolución continua basada en métricas de negocio."],
+    highlight: { title: "Diferencial", text: "Esta estructura demuestra que, además de productos propios, también entrego soluciones reales para clientes con profundidad de ejecución y consistencia técnica." },
+    approach: "Entrega modular e iterativa: cada automatización nace de una necesidad concreta y evoluciona mediante ciclos cortos de validación con el cliente.",
+  },
+  sistemaArk: {
+    roleTitle: "Creador y desarrollador — Sistema ARK",
+    summary: ["Sistema ARK es una plataforma web para productores rurales que ofrece una solución completa de gestión operativa, administrativa y financiera.", "El sistema es totalmente adaptable y puede utilizarse desde ordenador o móvil.", "Como creador y desarrollador, fui responsable de la concepción, el diseño de procesos, la arquitectura y las funcionalidades alineadas con la realidad del agronegocio.", "Su objetivo es centralizar información dispersa en hojas de cálculo, cuadernos y aplicaciones separadas."],
+    featuresTitle: "Funcionalidades principales",
+    features: ["Registro y gestión de empleados.", "Registro de clientes y proveedores.", "Control de productos e inventario.", "Movimientos financieros.", "Informes de gestión.", "Cierres financieros.", "Control operativo de la propiedad rural.", "Historial de movimientos.", "Panel con indicadores estratégicos.", "Acceso web desde ordenador y móvil.", "Interfaz sencilla e intuitiva."],
+    responsibilities: ["Concepción del producto.", "Levantamiento de requisitos con usuarios finales.", "Arquitectura de la plataforma.", "Desarrollo front-end y back-end.", "Modelado de la base de datos.", "Diseño de experiencia de usuario (UX/UI).", "Planificación de futuras integraciones con automatización e IA."],
+    highlight: { title: "Problema resuelto", text: "Muchos productores aún administran sus controles manualmente. Sistema ARK centraliza toda la información, reduce errores, aumenta la productividad y permite tomar decisiones basadas en datos." },
+    approach: "Desarrollo asistido por IA y orientado a la automatización para reducir plazos, estructurar integraciones y acelerar la evolución del producto.",
+  },
+};
+
+Object.entries(spanishCaseCopy).forEach(([caseName, copy]) => {
+  spanishData.cases[caseName] = { ...spanishData.cases[caseName], ...copy };
+});
+
+spanishData.cases.painelIa.clientCases = [
+  ["Empresa A - Distribuidora regional de frutas y verduras", "Envío manual de pedidos por WhatsApp, con búsqueda de contactos y revisión de productos y cantidades.", "Sistema integrado con Google Sheets que automatiza el envío de pedidos a proveedores por WhatsApp.", "Proceso más rápido, estandarizado y con menos errores operativos."],
+  ["Empresa B - Distribuidora regional de frutas y verduras", "Control manual de pedidos y poca visibilidad de las compras anteriores.", "Portal de pedidos en línea integrado con Google Sheets, con enlaces personalizados e historial en tiempo real.", "Proceso digitalizado, atención más ágil, menos retrabajo y mejor relación con los clientes."],
+  ["Empresa C - Distribuidora regional de frutas y verduras", "La planificación manual de rutas aumentaba el tiempo operativo y el riesgo de errores.", "Sistema web que agrupa artículos por ruta y camión, calcula cajas por proveedor y genera un PDF para los conductores.", "Rutas organizadas con mayor rapidez, menos retrabajo e información logística estandarizada."],
+  ["Empresa D - Distribuidora regional de frutas y verduras", "Los pedidos por texto exigían identificar productos y registrar manualmente cada artículo.", "Herramienta inteligente que interpreta el mensaje de WhatsApp, identifica productos, convierte cantidades y registra el pedido.", "Reducción drástica del tiempo, eliminación de errores de digitación y proceso estandarizado."],
+].map(([name, problem, solution, result], index) => ({ name, problem, solution, result, image: `/images/painel-ia/case-0${index + 1}.png` }));
+
+Object.values(spanishData.cases).forEach((projectCase) => {
+  if (projectCase.gallery?.images) {
+    projectCase.gallery.images = projectCase.gallery.images.map((item, index) => ({ ...item, label: `Pantalla ${String(index + 1).padStart(2, "0")}` }));
+  }
+});
+
+portfolioByLanguage[LANGUAGES.esES] = spanishData;
 
 export function getPortfolioData(language) {
   return portfolioByLanguage[language] ?? portfolioByLanguage[DEFAULT_LANGUAGE];

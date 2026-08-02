@@ -31,6 +31,15 @@ function SiteLayout() {
             <img className="flag-icon" src="/images/flags/us.svg" alt="United States" />
             <span>EN-US</span>
           </button>
+          <button
+            type="button"
+            className={`language-option ${language === LANGUAGES.esES ? "active" : ""}`}
+            aria-pressed={language === LANGUAGES.esES}
+            onClick={() => setLanguage(LANGUAGES.esES)}
+          >
+            <img className="flag-icon" src="/images/flags/es.svg" alt="España" />
+            <span>ES</span>
+          </button>
         </div>
       </div>
 

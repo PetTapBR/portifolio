@@ -41,10 +41,21 @@ const messagesByLanguage = {
     "/projetos/sistema-ark":
       "Hi Rodrigo! I saw Sistema ARK and would like to discuss a system for my operation.",
   },
+  "es-ES": {
+    default: "¡Hola Rodrigo! Vi tu portafolio y me gustaría hablar sobre un proyecto.",
+    "/": "¡Hola Rodrigo! Vi tu portafolio y me gustaría hablar sobre un proyecto.",
+    "/sobre": "¡Hola Rodrigo! Vi la página sobre ti y me gustaría hablar sobre un proyecto.",
+    "/projetos": "¡Hola Rodrigo! Vi tus proyectos y me gustaría hablar sobre una solución para mi empresa.",
+    "/contato": "¡Hola Rodrigo! Llegué desde tu página de contacto y me gustaría hablar sobre un proyecto.",
+    "/projetos/painel-ia": "¡Hola Rodrigo! Vi tu proyecto de automatización empresarial y me gustaría hablar sobre una solución similar.",
+    "/projetos/conecta-rural": "¡Hola Rodrigo! Vi el proyecto Conecta Rural y me gustaría hablar sobre una solución para el agronegocio.",
+    "/projetos/pettapbr": "¡Hola Rodrigo! Vi el proyecto PetTapBR y me gustaría hablar sobre un proyecto digital.",
+    "/projetos/sistema-ark": "¡Hola Rodrigo! Vi Sistema ARK y me gustaría hablar sobre un sistema para mi operación.",
+  },
 };
 
 function resolveLanguage(language) {
-  return language === "en-US" ? "en-US" : "pt-BR";
+  return messagesByLanguage[language] ? language : "pt-BR";
 }
 
 function buildWhatsAppUrl(message) {
@@ -61,6 +72,12 @@ export function getWhatsAppUrlForPath(pathname, language) {
 export function getWhatsAppUrlForProject(projectName, language) {
   const selectedLanguage = resolveLanguage(language);
 
+  if (selectedLanguage === "es-ES") {
+    return buildWhatsAppUrl(
+      `¡Hola Rodrigo! Vi tu proyecto "${projectName}" en el portafolio y me gustaría hablar sobre una solución similar para mi empresa.`
+    );
+  }
+
   const message =
     selectedLanguage === "en-US"
       ? `Hi Rodrigo! I saw your project "${projectName}" in your portfolio and would like to discuss a similar solution for my business.`
@@ -68,4 +85,3 @@ export function getWhatsAppUrlForProject(projectName, language) {
 
   return buildWhatsAppUrl(message);
 }
-
